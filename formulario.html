@@ -1,0 +1,98 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale">
+<title>Formulario</title>
+</head>
+<style>
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+<body style="background-color: rgb(155, 144, 93);">
+
+
+    <h2>Favor preencher o formulario</h2>
+    <form action="#" method="post">
+        <label for="fnome">Nome Completo:</label>
+        <input type="text" name="Nome"/>
+        <br>
+ 
+      <p>Escolha o Sexo:</p>
+      <input type="radio" id="masculino" name="sexo" value="Masculino">
+      <label for="masculino">Masculino</label>
+      <input type="radio" id="feminino" name="sexo" value="Feminino">
+      <label for="feminino">Feminino</label>
+      <input type="radio" id="outro" name="sexo" value="Outro">
+      <label for="outro">Outro</label>
+         <br>
+         <br>
+
+         <label for="fnome">Digite seu E-mail:</label>
+        <input type="text" name="E-mail"/>
+         <br>
+         <br>
+         <label for="fnome">Digite seu Telefone:</label>
+        <input type="text" name="Telefone"/>
+         <br>
+         <br>
+        <p><b>Reserva</b></p>
+        <br>
+        <label for="data_chegada">Data de Chegada:</label>
+        <input type="date" id="data_chegada" name="data_chegada" required>
+    
+        <br>
+        <br>
+        <label for="fnome">Número de Noites:</label>
+        <input type="text" name="Noites"/>
+        <br>
+        <br>
+        <label for="fnome">Número de Hóspedes:</label>
+        <input type="text" name="Número"/>
+
+
+        <br>
+        <br>
+         <label for="opcoes">Tipo de Quarto</label>
+         <select id="opcoes" name="opcoes " size="1">
+            <option value="escolha"selected>Escolha</option>
+            <option value="simples">Simples</option>
+            <option value="duplo" >Duplo</option>
+            <option value="triplo">Triplo</option> 
+            <option value="suite">Suite</option>
+         </select>
+         <br>
+       
+<br>
+<br>
+<label for="fopniao"><b>Deixe seu comentario</b></label><br>
+ 
+<br>
+<textarea name="mensagem" rows="10" cols="30"></textarea>
+<br>
+<br>
+<h3><p>Newsletter</p></h3>
+    <input type="checkbox" id="newsletter" name="newsletter">
+    <label for="newsletter">Gostaria de receber ofertas e promoções por email.</label>
+
+    <input type="submit" value="Enviar Reserva">
+ 
+ 
+    </form>
+   
+</body>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</html>
+ 
