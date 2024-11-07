@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Encanto do Mar</title>
+    <style>
+        /* Reset de margem e padding */
+        body {
+          background-color: aqua;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Estilo do conteúdo principal */
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Estilo das seções */
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            font-size: 1.5em;
+        }
+
+        /* Estilo da galeria */
+        .gallery {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Estilo da lista de serviços */
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .services-list li {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo do formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form input, form select, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Espaço para rádio buttons */
+        .radio-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Estilo de parágrafos */
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Hotel Encanto do Mar</h1>
+        <p>Bem-vindo ao paraíso</p>
+    </header>
+
+    <div class="container">
+        <!-- Introdução -->
+        <section>
+            <h2>Sobre o Hotel</h2>
+            <p>O Hotel Encanto do Mar oferece uma experiência única para quem busca relaxamento e conforto à beira-mar. Situado em um dos destinos mais paradisíacos, garantimos uma estadia inesquecível.</p>
+        </section>
+
+        <!-- Galeria de Imagens -->
+        <section>
+            <h2>Galeria</h2>
+            <div class="gallery">
+                <img src="imge.jpg" alt="Vista do hotel">
+                <img src="imge2.jpg" alt="Quarto de luxo">
+                <img src="imge3.jpg" alt="Piscina">
+                <img src="imge5.jpg" alt="Restaurante do hotel">
+            </div>
+        </section>
+
+        <!-- Serviços -->
+        <section>
+            <h2>Serviços</h2>
+            <ul class="services-list">
+                <li>Wi-Fi gratuito em todas as áreas</li>
+                <li>Piscina com vista para o mar</li>
+                <li>Spa completo e academia</li>
+                <li>Restaurante gourmet com vista panorâmica</li>
+                <li>Serviço de quarto 24 horas</li>
+            </ul>
+        </section>
+
+        <!-- Formulário de Reserva -->
+        <section>
+            <h2>Reserva</h2>
+            <form id="reservaForm" action="#" method="post">
+                <label for="fnome">Nome Completo:</label>
+                <input type="text" name="Nome" required>
+
+                <p>Escolha o Sexo:</p>
+                <div class="radio-group">
+                    <input type="radio" id="masculino" name="sexo" value="Masculino">
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" id="feminino" name="sexo" value="Feminino">
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" id="outro" name="sexo" value="Outro">
+                    <label for="outro">Outro</label>
+                </div>
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="E-mail" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="Telefone" required>
+
+                <label for="data_chegada">Data de Chegada:</label>
+                <input type="date" id="data_chegada" name="data_chegada" required>
+
+                <label for="noites">Número de Noites:</label>
+                <input type="number" id="noites" name="Noites" min="1" required>
+
+                <label for="hospedes">Número de Hóspedes:</label>
+                <input type="number" id="hospedes" name="Número" min="1" required>
+
+                <label for="opcoes">Tipo de Quarto</label>
+                <select id="opcoes" name="opcoes" required>
+                    <option value="escolha" selected>Escolha</option>
+                    <option value="simples">Simples</option>
+                    <option value="duplo">Duplo</option>
+                    <option value="triplo">Triplo</option> 
+                    <option value="suite">Suíte</option>
+                </select>
+
+                <p><b>Valor da Diária:</b></p>
+                <p id="valorDiaria">R$ 0,00</p>
+
+                <label for="fopniao"><b>Deixe seu comentário</b></label>
+                <textarea name="mensagem" rows="5" placeholder="Deixe uma mensagem ou pedido especial"></textarea>
+
+                <label><input type="checkbox" id="newsletter" name="newsletter"> Gostaria de receber ofertas e promoções por email.</label>
+
+                <input type="submit" value="Enviar Reserva">
+            </form>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Hotel Encanto do Mar - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById("reservaForm").addEventListener("change", calcularDiaria);
+        
+        function calcularDiaria() {
+            const tipoQuarto = document.getElementById("opcoes").value;
+            const noites = parseInt(document.getElementById("noites").value) || 0;
+            let valorQuarto = 0;
+
+            switch (tipoQuarto) {
+                case "simples":
+                    valorQuarto = 100;
+                    break;
+                case "duplo":
+                    valorQuarto = 150;
+                    break;
+                case "triplo":
+                    valorQuarto = 200;
+                    break;
+                case "suite":
+                    valorQuarto = 300;
+                    break;
+                default:
+                    valorQuarto = 0;
+            }
+
+            const totalDiaria = valorQuarto * noites;
+            document.getElementById("valorDiaria").textContent = `R$ ${totalDiaria.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
