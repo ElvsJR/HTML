@@ -3,80 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Formulário de Reserva</title>
     <style>
+      
+        body {
+            background-image: url('imge.jpg'); 
+            background-size: cover ;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .form-container {
+            background-color: rgba(83, 61, 61, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Estilo do botão de envio */
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        /* Estilo dos campos de entrada e outros elementos */
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
     </style>
 </head>
-<body style="background-color: rgb(155, 144, 93);">
+<body>
 
-    <h2>Favor preencher o formulario</h2>
-    <form id="reservaForm" action="#" method="post">
-        <label for="fnome">Nome Completo:</label>
-        <input type="text" name="Nome" />
-        <br>
+    <div class="form-container">
+        <h2>Favor preencher o formulário</h2>
+        <form id="reservaForm" action="#" method="post">
+            <label for="fnome">Nome Completo:</label>
+            <input type="text" name="Nome" required />
 
-        <p>Escolha o Sexo:</p>
-        <input type="radio" id="masculino" name="sexo" value="Masculino">
-        <label for="masculino">Masculino</label>
-        <input type="radio" id="feminino" name="sexo" value="Feminino">
-        <label for="feminino">Feminino</label>
-        <input type="radio" id="outro" name="sexo" value="Outro">
-        <label for="outro">Outro</label>
-        <br><br>
+            <p>Escolha o Sexo:</p>
+            <input type="radio" id="masculino" name="sexo" value="Masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="sexo" value="Feminino">
+            <label for="feminino">Feminino</label>
+            <input type="radio" id="outro" name="sexo" value="Outro">
+            <label for="outro">Outro</label>
+            <br>
+            <br>
 
-        <label for="email">Digite seu E-mail:</label>
-        <input type="text" name="E-mail" />
-        <br><br>
+            <label for="email">Digite seu E-mail:</label>
+            <input type="email" name="E-mail" required />
 
-        <label for="telefone">Digite seu Telefone:</label>
-        <input type="text" name="Telefone" />
-        <br><br>
+            <label for="telefone">Digite seu Telefone:</label>
+            <input type="tel" name="Telefone" required />
 
-        <p><b>Reserva</b></p><br>
-        <label for="data_chegada">Data de Chegada:</label>
-        <input type="date" id="data_chegada" name="data_chegada" required>
-        <br><br>
+            <p><b>Reserva</b></p>
+            <label for="data_chegada">Data de Chegada:</label>
+            <input type="date" id="data_chegada" name="data_chegada" required>
 
-        <label for="noites">Número de Noites:</label>
-        <input type="number" id="noites" name="Noites" min="1" required />
-        <br><br>
+            <label for="noites">Número de Noites:</label>
+            <input type="number" id="noites" name="Noites" min="1" required />
 
-        <label for="hospedes">Número de Hóspedes:</label>
-        <input type="number" id="hospedes" name="Número" min="1" required />
-        <br><br>
+            <label for="hospedes">Número de Hóspedes:</label>
+            <input type="number" id="hospedes" name="Número" min="1" required />
 
-        <label for="opcoes">Tipo de Quarto</label>
-        <select id="opcoes" name="opcoes" required>
-            <option value="escolha" selected>Escolha</option>
-            <option value="simples">Simples</option>
-            <option value="duplo">Duplo</option>
-            <option value="triplo">Triplo</option> 
-            <option value="suite">Suite</option>
-        </select>
-        <br><br>
+            <label for="opcoes">Tipo de Quarto</label>
+            <select id="opcoes" name="opcoes" required>
+                <option value="escolha" selected>Escolha</option>
+                <option value="simples">Simples</option>
+                <option value="duplo">Duplo</option>
+                <option value="triplo">Triplo</option> 
+                <option value="suite">Suíte</option>
+            </select>
 
-        <p><b>Valor da Diária:</b></p>
-        <p type="valorDiaria" id="valorDiaria">R$ 0,00</p>
-        <br>
+            <p><b>Valor da Diária:</b></p>
+            <p id="valorDiaria">R$ 0,00</p>
 
-        <label for="fopniao"><b>Deixe seu comentário</b></label><br><br>
-        <textarea name="mensagem" rows="10" cols="30"></textarea>
-        <br><br>
+            <label for="fopniao"><b>Deixe seu comentário</b></label>
+            <textarea name="mensagem" rows="5" cols="30"></textarea>
 
-        <h3><p>Newsletter</p></h3>
-        <input type="checkbox" id="newsletter" name="newsletter">
-        <label for="newsletter">Gostaria de receber ofertas e promoções por email.</label>
-        <br><br>
+            <h3>Newsletter</h3>
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Gostaria de receber ofertas e promoções por email.</label>
 
-        <input type="submit" value="Enviar Reserva">
-    </form>
+            <input type="submit" value="Enviar Reserva">
+        </form>
+    </div>
+
     <script>
         document.getElementById("reservaForm").addEventListener("change", calcularDiaria);
         
@@ -88,16 +120,16 @@
         
             switch (tipoQuarto) {
                 case "simples":
-                    valorQuarto = 100; // Valor para quarto simples
+                    valorQuarto = 100;
                     break;
                 case "duplo":
-                    valorQuarto = 150; // Valor para quarto duplo
+                    valorQuarto = 150;
                     break;
                 case "triplo":
-                    valorQuarto = 200; // Valor para quarto triplo
+                    valorQuarto = 200;
                     break;
                 case "suite":
-                    valorQuarto = 300; // Valor para suíte
+                    valorQuarto = 300;
                     break;
                 default:
                     valorQuarto = 0;
@@ -106,6 +138,7 @@
             const totalDiaria = valorQuarto * noites;
             document.getElementById("valorDiaria").textContent = `R$ ${totalDiaria.toFixed(2)}`;
         }
-        </script>
+    </script>
+
 </body>
 </html>
